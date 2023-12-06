@@ -1,0 +1,25 @@
+{
+  "name": "task",
+  "version": "1.0.0",
+  "description": "task from a company",
+  "main": "app.js",
+  "scripts": {
+    "test": "test",
+    "start":"node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yij793/Data-Aggregation-and-Message.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yij793/Data-Aggregation-and-Message/issues"
+  },
+  "homepage": "https://github.com/yij793/Data-Aggregation-and-Message#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongodb": "^6.3.0",
+    "mongoose": "^8.0.2"
+  }
+}
