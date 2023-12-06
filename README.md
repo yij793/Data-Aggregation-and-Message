@@ -33,6 +33,7 @@ curl --location 'http://localhost:3000/post/student' \
 ```
 
 get user by id --- replace "6570a5f1803918828de311a8" by the existing id
+```
 curl --location --request GET 'http://localhost:3000/get/student?id=6570a5f1803918828de311a8' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -40,8 +41,9 @@ curl --location --request GET 'http://localhost:3000/get/student?id=6570a5f18039
     "age":200,
     "email": "abcdef@mail.com"
 }'
-
+```
 update a student --- replace "657005f54c81fc6d55418b9c" by the existing id
+```
 curl --location --request PATCH 'http://localhost:3000/put/student' \
 --header 'Content-Type: application/json' \
 --data-raw '        {
@@ -49,14 +51,15 @@ curl --location --request PATCH 'http://localhost:3000/put/student' \
             "email": "abcde@gmail.com",
             "name": "new"
         }'
-
+```
 Delete a student --- replace "657005f54c81fc6d55418b9c" by the existing id
+```
 curl --location --request DELETE 'http://localhost:3000/delete/student' \
 --header 'Content-Type: application/json' \
 --data '{
     "id": "657005f54c81fc6d55418b9c"
 }'
-
+```
 ## Message service
 for testing, run the socket.io client as testing purpose:
 run 'node socket.io_client.js'
