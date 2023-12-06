@@ -20,7 +20,8 @@ get all student
 ```curl --location 'http://localhost:3000/get/students'```
 
 add a student
-```curl --location 'http://localhost:3000/post/student' \
+```
+curl --location 'http://localhost:3000/post/student' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "name":"abc7",
@@ -28,7 +29,8 @@ add a student
     "age": 30,
     "grade": 1,
     "classId": 2
-}'```
+}'
+```
 
 get user by id --- replace "6570a5f1803918828de311a8" by the existing id
 ``` curl --location --request GET 'http://localhost:3000/get/student?id=6570a5f1803918828de311a8' \
