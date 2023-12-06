@@ -1,14 +1,36 @@
 const mongoose = require('mongoose');
 const app = require('./app');
-const express = require('express');
+const http = require('http');
 require('./studentService');
 require('./aggregateService');
 
 const port = 3000;
+const server = http.createServer(app);
+const socketIo = require('socket.io');
 
-app.listen(port, () => {
+// add socket message
+const io = socketIo(server);
+
+io.on('connection', (socket) => {
+    console.log('A client has connected');
+
+    socket.on('chat message', (msg) => {
+        console.log('Message received:', msg);
+        io.emit('Message', "Hello, this is the message from server");
+    });
+
+    socket.on('disconnect', () => {
+        console.log('Disconnected');
+    });
+    socket.on('connect_error', (error) => {
+        console.error('Connection Error:', error);
+    });
+});
+
+server.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });
+
 
 async function startServer() {
     try {
@@ -25,3 +47,4 @@ async function startServer() {
 }
 
 startServer();
+module.exports = server
