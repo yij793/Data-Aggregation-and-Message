@@ -20,7 +20,6 @@ get all student
 ```curl --location 'http://localhost:3000/get/students'```
 
 add a student
-```
 curl --location 'http://localhost:3000/post/student' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -30,32 +29,32 @@ curl --location 'http://localhost:3000/post/student' \
     "grade": 1,
     "classId": 2
 }'
-```
+
 
 get user by id --- replace "6570a5f1803918828de311a8" by the existing id
-``` curl --location --request GET 'http://localhost:3000/get/student?id=6570a5f1803918828de311a8' \
+curl --location --request GET 'http://localhost:3000/get/student?id=6570a5f1803918828de311a8' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "name":"abcde",
     "age":200,
     "email": "abcdef@mail.com"
-}'```
+}'
 
 update a student --- replace "657005f54c81fc6d55418b9c" by the existing id
-```curl --location --request PATCH 'http://localhost:3000/put/student' \
+curl --location --request PATCH 'http://localhost:3000/put/student' \
 --header 'Content-Type: application/json' \
 --data-raw '        {
             "id": "657005f54c81fc6d55418b9c",
             "email": "abcde@gmail.com",
             "name": "new"
-        }'```
+        }'
 
 Delete a student --- replace "657005f54c81fc6d55418b9c" by the existing id
-```curl --location --request DELETE 'http://localhost:3000/delete/student' \
+curl --location --request DELETE 'http://localhost:3000/delete/student' \
 --header 'Content-Type: application/json' \
 --data '{
     "id": "657005f54c81fc6d55418b9c"
-}'```
+}'
 
 ## Message service
 for testing, run the socket.io client as testing purpose:
