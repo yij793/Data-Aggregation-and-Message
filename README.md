@@ -20,7 +20,8 @@ get all student
 ```curl --location 'http://localhost:3000/get/students'```
 
 add a student
-``` curl --location 'http://localhost:3000/post/student' \
+```
+curl --location 'http://localhost:3000/post/student' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "name":"abc7",
